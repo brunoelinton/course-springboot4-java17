@@ -12,6 +12,8 @@ import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "tb_payment")
 public class Payment implements Serializable {
@@ -19,18 +21,23 @@ public class Payment implements Serializable {
 	// ID SERIAL VERSION
 	private static final long serialVersionUID = 1L;
 
+	// PAYMENT'S ATTRIBUTES
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private Instant moment;
 	
+	// ASSOCIATION
 	@OneToOne
 	@MapsId
+	@JsonIgnore
 	private Order order;
 	
+	// DEFAULT CONSTRUCTOR
 	public Payment() {
 	}
-
+	
+	// CONSTRUCTOR WITH ARGUMENTS
 	public Payment(Long id, Instant moment, Order order) {
 		super();
 		this.id = id;
@@ -38,6 +45,7 @@ public class Payment implements Serializable {
 		this.order = order;
 	}
 
+	// GETTERS AND SETTERS
 	public Long getId() {
 		return id;
 	}
@@ -62,6 +70,7 @@ public class Payment implements Serializable {
 		this.order = order;
 	}
 
+	// HASHCODE AND EQUALS
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
