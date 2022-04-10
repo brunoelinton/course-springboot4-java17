@@ -1,4 +1,4 @@
-package com.educandoweb.course.entities.PK;
+package com.educandoweb.course.entities.pk;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -16,7 +16,7 @@ public class OrderItemPK implements Serializable {
 	// ID SERIAL VERSION
 	private static final long serialVersionUID = 1L;
 	
-	// COMPOSESITE PRIMARY KEY
+	// COMPOSITE PRIMARY KEY
 	@ManyToOne
 	@JoinColumn(name = "order_id")
 	private Order order;
@@ -25,11 +25,11 @@ public class OrderItemPK implements Serializable {
 	@JoinColumn(name = "product_id")
 	private Product product;
 	
+	// GETTERS AND SETTERS
 	public Order getOrder() {
 		return order;
 	}
 	
-	// GETTERS AND SETTERS
 	public void setOrder(Order order) {
 		this.order = order;
 	}
@@ -56,7 +56,5 @@ public class OrderItemPK implements Serializable {
 			return false;
 		OrderItemPK other = (OrderItemPK) obj;
 		return Objects.equals(order, other.order) && Objects.equals(product, other.product);
-	}
-	
-	
+	}	
 }

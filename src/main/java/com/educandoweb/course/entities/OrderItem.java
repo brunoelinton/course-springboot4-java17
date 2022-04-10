@@ -7,7 +7,7 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import com.educandoweb.course.entities.PK.OrderItemPK;
+import com.educandoweb.course.entities.pk.OrderItemPK;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -20,9 +20,7 @@ public class OrderItem implements Serializable {
 	// ORDER ITEM'S ATRIBUTES
 	@EmbeddedId
 	private OrderItemPK id = new OrderItemPK();
-	
 	private Integer quantity;
-	
 	private Double price;
 	
 	// DEFAULT CONSTRUCTOR
@@ -72,12 +70,12 @@ public class OrderItem implements Serializable {
 		this.price = price;
 	}
 
+	// HASHCODE AND EQUALS
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
 	}
 
-	// HASHCODE AND EQUALS
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -88,6 +86,5 @@ public class OrderItem implements Serializable {
 			return false;
 		OrderItem other = (OrderItem) obj;
 		return Objects.equals(id, other.id);
-	}
-	
+	}	
 }

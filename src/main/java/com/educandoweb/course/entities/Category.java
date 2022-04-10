@@ -25,7 +25,6 @@ public class Category implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
 	private String name;
 	
 	// ASSOCIATION
@@ -44,11 +43,11 @@ public class Category implements Serializable {
 		this.name = name;
 	}
 
+	// GETTERS AND SETTERS
 	public Long getId() {
 		return id;
 	}
 
-	// GETTERS AND SETTERS
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -65,6 +64,7 @@ public class Category implements Serializable {
 		return products;
 	}
 
+	// HASHCODE AND EQUALS
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);

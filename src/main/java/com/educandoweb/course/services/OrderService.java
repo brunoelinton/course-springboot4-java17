@@ -15,12 +15,12 @@ public class OrderService {
 	@Autowired
 	private OrderRepository repository;
 	
-	// RETURN ALL USERS
+	// RETURN ALL ORDERS
 	public List<Order> findAll(){
 		return repository.findAll();
 	}
 	
-	// RETURN USER BY ID
+	// RETURN ORDER BY ID
 	public Order findById(Long id) {
 		Optional<Order> obj = repository.findById(id);
 		return obj.get();

@@ -24,13 +24,13 @@ public class ProductResource {
 	@GetMapping
 	public ResponseEntity<List<Product>> findAll(){
 		
-		// END POINT IMPLEMENTATION FOR GET ALL USERS
+		// END POINT IMPLEMENTATION FOR GET ALL PRODUCTS
 		List<Product> list = service.findAll();
 		// RETURN A GOOD RESPONSE TO REQUISITON HTTP FROM PAGE BODY
 		return ResponseEntity.ok().body(list);
 	}
 	
-	// TESTING USER RESOURCE, FROM GET REQUISITION IN HTTP
+	// TESTING PRODUCT RESOURCE, FROM GET REQUISITION IN HTTP
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Product> findById(@PathVariable Long id){
 		Product obj = service.findById(id);

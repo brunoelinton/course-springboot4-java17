@@ -15,12 +15,12 @@ public class ProductService {
 	@Autowired
 	private ProductRepository repository;
 	
-	// RETURN ALL USERS
+	// RETURN ALL PRODUCTS
 	public List<Product> findAll(){
 		return repository.findAll();
 	}
 	
-	// RETURN USER BY ID
+	// RETURN PRODUCT BY ID
 	public Product findById(Long id) {
 		Optional<Product> obj = repository.findById(id);
 		return obj.get();

@@ -39,6 +39,7 @@ public class User implements Serializable {
 	public User() {
 	}
 
+	// CONSTRUCTOR WITH ARGUMENTS
 	public User(Long id, String name, String email, String phone, String password) {
 		super();
 		this.id = id;
@@ -93,6 +94,7 @@ public class User implements Serializable {
 		return orders;
 	}
 
+	// HASHCODE AND EQUALS
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -108,6 +110,5 @@ public class User implements Serializable {
 			return false;
 		User other = (User) obj;
 		return Objects.equals(id, other.id);
-	}
-	
+	}	
 }

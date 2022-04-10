@@ -95,6 +95,7 @@ public class Order implements Serializable {
 		return items;
 	}
 
+	// HASHCODE AND EQUALS
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
